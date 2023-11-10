@@ -1,0 +1,13 @@
+name: verif_create
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - db/create/*.sh
+jobs:
+  verif_alter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: copy_create
+        run : echo "copy scripts create DB"

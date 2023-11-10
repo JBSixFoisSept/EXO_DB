@@ -1,0 +1,13 @@
+name: verif_drop
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - db/drop/*.sh
+jobs:
+  verif_alter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: copy_drop
+        run : echo "copy scripts drop DB"
