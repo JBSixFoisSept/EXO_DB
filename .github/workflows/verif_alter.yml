@@ -18,4 +18,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: deployer script
-        run : echo "deploiement terminé"
+        run : echo "${{toJSON(github.event)}}"
