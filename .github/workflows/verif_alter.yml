@@ -14,13 +14,17 @@ jobs:
       - name: copy_alter
         run : |
           ls db/alter/*.sh
-          echo "${{ github.event.before }} -- ${{ github.sha }} "
+          git diff --name-only ${{ github.event.before }}..${{ github.sha }} 
           echo "${{ toJSON(github.event) }}"
 
   deploy:
-    needs: verif_alter
     runs-on: ubuntu-latest
+    needs: verif_alter
     steps:
-      - name: deployer script
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: copy_alter
         run : |
-          echo " action = ${{github}}"
+          ls db/alter/*.sh
+          git diff --name-only ${{ github.event.before }}..${{ github.sha }} 
+          echo "${{ toJSON(github.event) }}"
