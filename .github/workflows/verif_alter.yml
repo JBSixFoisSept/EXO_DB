@@ -14,7 +14,7 @@ jobs:
       - name: copy_alter
         run : |
           ls db/alter/*.sh
-          echo " action_path = ${{github.action_path}}"
+          echo " event_name = ${{github.event_name}}"
   deploy:
     needs: verif_alter
     runs-on: ubuntu-latest
