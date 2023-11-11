@@ -14,6 +14,8 @@ jobs:
           echo " ref_name = ${{github.ref_name}}"
           echo " repository_owner = ${{github.repository_owner}}"
           echo " repository_owner_id = ${{github.repository_owner_id}}"
+          echo " -------------------"
+          echo "${{ toJSON(github.event) }}"
 
   test2:
     runs-on: ubuntu-latest
@@ -21,3 +23,15 @@ jobs:
     steps:
       - name: test_action
         run : echo "test action = ${{ github.event_name}}
+
+  test3:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'push' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: test_action
+        run : |
+          echo "test action = ${{ github.event_name}}
+          echo "runner.name = ${{runner.name}}"
+          echo "runner.os = ${{runner.os}}"
