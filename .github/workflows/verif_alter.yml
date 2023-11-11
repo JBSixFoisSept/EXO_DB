@@ -11,9 +11,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: maj env
+        run : |
+          sudo apt-get update
+          sudo apt install git-all
       - name: copy_alter
         run : |
-          git diff --name-only caae6c04086c37ed85bd9c8f477f9f76253650f7..ba15f667fa8e967e32090a77004fff38fb886c38 
+          git diff --name-only ${{ github.event.before }}..${{ github.sha }}
 
   deploy:
     runs-on: ubuntu-latest
@@ -25,4 +29,3 @@ jobs:
         run : |
           ls db/alter/*.sh
           echo "${{ toJSON(github.event) }}"
-          git diff --name-only ${{ github.event.before }}..${{ github.sha }}
