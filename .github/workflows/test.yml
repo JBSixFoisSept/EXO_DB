@@ -28,9 +28,9 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'push' }}
     steps:
-      - name: Checkout
+      - name: Checkout2
         uses: actions/checkout@v4
-      - name: test_action
+      - name: test_action2
         run : |
           echo "test action = ${{ github.event_name}}
           echo "runner.name = ${{runner.name}}"
