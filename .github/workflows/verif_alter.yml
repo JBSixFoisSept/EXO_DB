@@ -12,11 +12,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: copy_alter
-        run : ls db/alter/*.sh
+        run : |
+          ls db/alter/*.sh
+          echo " action_path = ${{github.action_path}}"
   deploy:
     needs: verif_alter
     runs-on: ubuntu-latest
     steps:
       - name: deployer script
         run : |
-          echo " action_path ${{ github.action_path }}"
+          echo " action = ${{github}}"
