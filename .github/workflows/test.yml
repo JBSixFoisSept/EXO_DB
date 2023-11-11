@@ -1,0 +1,16 @@
+name: test
+on:
+  push:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: test variable
+        run : |
+          echo " event_name = ${{github.event_name}}"
+          echo " ref = ${{github.ref}}"
+          echo " ref_name = ${{github.ref_name}}"
+          echo " repository_owner = ${{github.repository_owner}}"
+          echo " repository_owner_id = ${{github.repository_owner_id}}"
