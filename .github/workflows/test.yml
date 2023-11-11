@@ -2,7 +2,7 @@ name: test
 on:
   push:
 jobs:
-  test:
+  test1:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -15,6 +15,9 @@ jobs:
           echo " repository_owner = ${{github.repository_owner}}"
           echo " repository_owner_id = ${{github.repository_owner_id}}"
 
+  test2:
+    runs-on: ubuntu-latest
     if: ${{ github.event_name == 'pull_request' }}
+    steps:
       - name: test_action
         run : echo "test action = ${{ github.event_name}}
