@@ -14,7 +14,8 @@ jobs:
       - name: copy_alter
         run : |
           echo  "${{ github.event.before }}..${{ github.sha }}"
-          git diff --name-only HEAD^ HEAD
+          echo "${{ toJSON(github.event) }}"
+#          git diff --name-only HEAD^ HEAD
   deploy:
     runs-on: ubuntu-latest
     needs: verif_alter
