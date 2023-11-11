@@ -18,4 +18,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: deployer script
-        run : echo "${{toJSON(github.event)}}"
+        run : |
+          echo " action_path ${{ github.action_path }}"
