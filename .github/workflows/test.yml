@@ -14,3 +14,7 @@ jobs:
           echo " ref_name = ${{github.ref_name}}"
           echo " repository_owner = ${{github.repository_owner}}"
           echo " repository_owner_id = ${{github.repository_owner_id}}"
+
+    if: ${{ github.event_name == 'pull_request' }}
+      - name: test_action
+        run : echo "test action = ${{ github.event_name}}
