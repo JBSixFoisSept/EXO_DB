@@ -14,7 +14,7 @@ jobs:
       - name: copy_alter
         run : |
           ls db/alter/*.sh
-          echo "${{ toJSON(steps.changes.outputs.all) }}"      
+          echo "${{ steps.changes.outputs.all }}"      
 
   deploy:
     needs: verif_alter
