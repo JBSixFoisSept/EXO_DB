@@ -1,6 +1,10 @@
 name: test
 on:
   push:
+    branches:
+      - main
+    paths:
+      - db/create/*.txt
 jobs:
   test1:
     runs-on: ubuntu-latest

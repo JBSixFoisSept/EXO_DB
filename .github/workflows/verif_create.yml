@@ -10,4 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: copy_create
-        run : echo "copy scripts create DB"
+        run : |
+          echo "copy scripts create DB"
+          echo "${{ toJSON(github.event) }}"
