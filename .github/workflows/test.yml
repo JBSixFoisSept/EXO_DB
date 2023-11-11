@@ -22,7 +22,7 @@ jobs:
     if: ${{ github.event_name == 'pull_request' }}
     steps:
       - name: test_action
-        run : echo "test action = ${{ github.event_name}}
+        run : echo "test action = ${{ github.event_name}}"
 
   test3:
     runs-on: ubuntu-latest
@@ -32,6 +32,6 @@ jobs:
         uses: actions/checkout@v4
       - name: test_action2
         run : |
-          echo "test action = ${{ github.event_name}}
+          echo "test action = ${{ github.event_name}}"
           echo "runner.name = ${{runner.name}}"
           echo "runner.os = ${{runner.os}}"
