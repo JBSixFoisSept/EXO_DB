@@ -14,7 +14,7 @@ jobs:
       - name: maj env
         run : |
           sudo apt-get update
-          sudo apt install git-all
+          sudo apt install git
       - name: copy_alter
         run : |
           git diff --name-only ${{ github.event.before }}..${{ github.sha }}
