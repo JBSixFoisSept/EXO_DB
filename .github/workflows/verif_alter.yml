@@ -25,4 +25,4 @@ jobs:
       - name: copy_alter
         run : |
           ls db/alter/*.sh
-          echo "${{ toJSON(github.event) }}"
+
