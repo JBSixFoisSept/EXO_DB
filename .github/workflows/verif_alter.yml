@@ -15,6 +15,7 @@ jobs:
         run : |
           echo  "${{ github.event.before }}..${{ github.sha }}"
           echo "${{ toJSON(github.event) }}"
+          echo " fin job 1"
 #          git diff --name-only HEAD^ HEAD
   deploy:
     runs-on: ubuntu-latest
