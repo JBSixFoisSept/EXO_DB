@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v4
       - name: copy_alter
         run : |
-        #  echo  "${{ github.event.before }}..${{ github.sha }}"
+    #  echo  "${{ github.event.before }}..${{ github.sha }}"
           echo "${{ toJSON(github.event) }}"
           echo " fin job $MA_VAR_TEST"
 #          git diff --name-only HEAD^ HEAD
