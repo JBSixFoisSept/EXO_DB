@@ -1,5 +1,6 @@
 name: verif_alter
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
