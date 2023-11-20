@@ -1,10 +1,6 @@
 name: test
-on:
-  push:
-    branches:
-      - dev
-    paths:
-      - db/create/*.txt
+on:  workflow_dispatch
+
 jobs:
   test1:
     runs-on: ubuntu-latest
