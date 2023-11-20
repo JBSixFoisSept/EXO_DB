@@ -6,7 +6,7 @@ on:
     paths:
       - db/alter/*.sh
 env:
-  MA_VAR_TEST: variable test
+  MA_VAR_TEST: ${{ secrets.TEST_VAR_SECRET}}
 jobs:
   verif_alter:
     runs-on: ubuntu-latest
