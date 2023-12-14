@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   test1:
-    if: ${{ inputs.RELEASE_NAME != '' }} || (github.event.pull_request.merged == 'true')
+    if: ${{ inputs.RELEASE_NAME != '' }} || (github.event_name == 'pull_request' && github.event.pull_request.merged == 'true')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -22,7 +22,7 @@ jobs:
           echo " ref = ${{github.ref}}"
           echo " ref_name = ${{github.ref_name}}"
           echo " repository_owner = ${{github.repository_owner}}"
-          echo " test_merge = ${{github.event.pull_request.merged}}"
+          echo "RELEASE_NAME = ${{inputs.RELEASE_NAME}}"
 
   test2:
     runs-on: ubuntu-latest
@@ -49,9 +49,8 @@ jobs:
     steps:
       - name: Checkout2
         uses: actions/checkout@v4
-      - name: test_action2
+      - name: test_action2echo "RELEASE_NAME = ${{inputs.RELEASE_NAME}}"
         run : |
           echo "test action = ${{ github.event_name}}"
           echo "runner.name = ${{runner.name}}"
           echo "runner.os = ${{runner.os}}"
-          echo "RELEASE_NAME = ${{inputs.RELEASE_NAME}}"
