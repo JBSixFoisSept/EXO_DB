@@ -18,10 +18,11 @@ jobs:
       - name: test variable
         run : |
           echo " event_name = ${{github.event_name}}"
+          echo " event_name = ${{github.event_name}}"
           echo " ref = ${{github.ref}}"
           echo " ref_name = ${{github.ref_name}}"
           echo " repository_owner = ${{github.repository_owner}}"
-          echo " repository_owner_id = ${{github.repository_owner_id}}"
+          echo " test_merge = ${{github.event.pull_request.merged}}"
 
   test2:
     runs-on: ubuntu-latest
