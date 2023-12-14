@@ -17,7 +17,7 @@ jobs:
         run : |
           echo " event_name = ${{github.event_name}}"
           echo " ref = ${{github.ref}}"
-          echo " ${{RELEASE_NAME}}" 
+          echo " ${{input.RELEASE_NAME}}" 
           echo " ref_name = ${{github.ref_name}}"
           echo " repository_owner = ${{github.repository_owner}}"
           echo " repository_owner_id = ${{github.repository_owner_id}}"
