@@ -1,7 +1,7 @@
 name: test_appel_out
 on:
   workflow_call:
-    intput:
+    intputs:
       RELEASE_NAME:
         required: false
         type: string
