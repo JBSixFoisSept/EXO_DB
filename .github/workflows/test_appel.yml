@@ -7,4 +7,5 @@ on:
 jobs:
   deploy_prod:
     uses: ./.github/workflows/test.yml
-
+    with:
+      RELEASE_NAME: ${{ github.ref_name }}
