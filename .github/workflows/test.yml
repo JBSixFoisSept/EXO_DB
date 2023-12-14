@@ -40,7 +40,7 @@ jobs:
         run : |
           echo "test action = ${{ github.event_name}}"
           echo "runner.name = ${{runner.name}}"
-          echo "runner.os = ${{runner.os}}"
+          echo "RELEASE_NAME = ${{inputs.RELEASE_NAME}}"
 
   test4:
     runs-on: ubuntu-latest
