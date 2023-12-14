@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   test1:
-    if: github.event.pull_request.merged == true || (startsWith(github.ref, 'refs/tags/') && github.ref =~ ^refs/tags/v\d+\.\d+\.\d+$)
+    if: (github.event_name == 'pull_request' && github.event.pull_request.merged == true) || (github.event_name == 'push' && startsWith(github.ref, 'refs/tags/') && github.ref =~ ^refs/tags/v\d+\.\d+\.\d+$)
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
