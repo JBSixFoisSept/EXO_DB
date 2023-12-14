@@ -5,7 +5,6 @@ on:
       RELEASE_NAME:
         required: false
         type: string
-
 permissions:
   contents: read
 
@@ -45,7 +44,7 @@ jobs:
 
   test4:
     runs-on: ubuntu-latest
-    if: ${{RELEASE_NAME}} =''
+    if: ${{input.RELEASE_NAME}} =''
     steps:
       - name: Checkout2
         uses: actions/checkout@v4
