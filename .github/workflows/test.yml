@@ -20,8 +20,6 @@ jobs:
           echo " ref_name = ${{github.ref_name}}"
           echo " repository_owner = ${{github.repository_owner}}"
           echo " repository_owner_id = ${{github.repository_owner_id}}"
-          echo " -------------------"
-          echo "${{ toJSON(github.event) }}"
 
   test2:
     runs-on: ubuntu-latest
