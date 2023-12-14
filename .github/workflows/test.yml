@@ -44,7 +44,7 @@ jobs:
 
   test4:
     runs-on: ubuntu-latest
-    if: ${{inputs.RELEASE_NAME}} ==''
+    if: ${{inputs.RELEASE_NAME}} != ''
     steps:
       - name: Checkout2
         uses: actions/checkout@v4
