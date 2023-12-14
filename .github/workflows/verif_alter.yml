@@ -20,6 +20,7 @@ jobs:
           echo " fin job ${{ env.MA_VAR_TEST }}" > echo.txt
           echo " fin job $GITHUB_REF"
           echo " fin job ${{ github.ref }}"
+          cat echo.txt
   deploy:
     runs-on: ubuntu-latest
     needs: verif_alter
