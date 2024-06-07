@@ -1,5 +1,6 @@
 name: test_appel
 on:
+  workflow_dispatch:
   pull_request:
     branches:
       - main
