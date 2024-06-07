@@ -23,6 +23,13 @@ jobs:
           echo " ref_name = ${{github.ref_name}}"
           echo " repository_owner = ${{github.repository_owner}}"
           echo "RELEASE_NAME = ${{inputs.RELEASE_NAME}}"
+          echo "======================================="
+          echo "Repository: ${GITHUB_REPOSITORY}"
+          OWNER=$(echo ${GITHUB_REPOSITORY} | cut -d'/' -f1)
+          REPO=$(echo ${GITHUB_REPOSITORY} | cut -d'/' -f2)
+          echo "Owner: ${OWNER}"
+          echo "Repo: ${REPO}"
+          echo "Ref: ${GITHUB_REF}"
 
   test2:
     runs-on: ubuntu-latest
